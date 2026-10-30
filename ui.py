@@ -47,10 +47,10 @@ if submitted:
                 st.success(result["Message"])
                 st.markdown(result["WorkoutPlan"])
             else:
-                st.error(
-                    f"API error: {response.status_code}"
-                )
-                st.json(response.json())
+                # st.error(
+                #     f"API error: {response.status_code}"
+                # )
+                st.error("We are having trouble reaching our backend servers. Please try after some time")
 
         except requests.RequestException as error:
             st.error(f"Could not connect to API: {error}")
